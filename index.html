@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172b26">
+  <title>Tempo — Le métronome qui s'efface</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="header"><a class="brand" href="./" aria-label="Tempo, accueil"><span class="brand-mark" aria-hidden="true">t.</span>tempo<span class="brand-dot">/</span></a><span class="header-note">Laissez votre rythme prendre le relais.</span></header>
+  <main>
+    <section class="intro"><p class="eyebrow">LE MÉTRONOME SNEAKY</p><h1>Gardez le rythme.<br><em>Même dans le silence.</em></h1><p>Quelques tics disparaissent. À vous de garder la pulsation<br class="desktop-break"> jusqu’au retour du métronome.</p></section>
+    <section class="instrument" aria-label="Métronome">
+      <div class="instrument-top"><span class="eyebrow">VOTRE SESSION</span><span id="status" class="status" role="status">Prêt à jouer</span></div>
+      <div class="tempo-control"><button id="slower" class="step" aria-label="Réduire le tempo de 1">−</button><div class="tempo-number"><label class="sr-only" for="tempo">Tempo en battements par minute</label><input id="tempo" type="number" min="30" max="240" value="90" inputmode="numeric"><span id="tempo-unit">BPM · NOIRE</span></div><button id="faster" class="step" aria-label="Augmenter le tempo de 1">+</button></div>
+      <label class="sr-only" for="tempo-range">Régler le tempo</label><input id="tempo-range" class="tempo-range" type="range" min="30" max="240" value="90"><div class="range-labels"><span>30</span><span>240</span></div>
+      <div id="beats" class="beats" aria-label="Repères des temps"></div>
+      <p class="beat-caption" id="beat-caption">Une mesure de départ, puis faites confiance à votre oreille.</p>
+      <div class="settings"><div class="setting"><span class="field-label" id="signature-label">Signature</span><div class="segmented" role="group" aria-labelledby="signature-label"><button data-signature="4" class="selected" aria-pressed="true">4/4</button><button data-signature="6" aria-pressed="false">6/8</button></div></div><div class="setting"><label class="field-label" for="omissions">Tics oubliés</label><div class="input-shell"><input id="omissions" type="number" min="0" max="8" value="3" inputmode="numeric"><span>tics</span></div></div><div class="setting"><label class="field-label" for="measures">Sur combien de mesures ?</label><select id="measures"><option value="1">1 mesure</option><option value="2" selected>2 mesures</option><option value="4">4 mesures</option><option value="8">8 mesures</option></select></div></div>
+      <div class="pattern-note"><span aria-hidden="true">↳</span><p id="pattern-summary">3 tics silencieux sur 8, répartis au hasard à chaque cycle.</p></div>
+      <div class="options"><label class="toggle"><input id="visual" type="checkbox"><span class="switch" aria-hidden="true"></span>Afficher les repères visuels</label><label class="toggle"><input id="accent" type="checkbox" checked><span class="switch" aria-hidden="true"></span>Accentuer le premier temps</label></div>
+      <button id="play" class="play"><span id="play-icon" aria-hidden="true">▶</span><span id="play-label">Commencer</span></button><p id="error" role="alert" hidden></p>
+      <div class="session-footer"><span id="session-note">1 mesure de départ · cycles aléatoires</span><span class="keyboard-hint"><kbd>Espace</kbd> pour jouer / arrêter</span></div>
+    </section>
+    <footer class="footer"><span class="little-star" aria-hidden="true">✳</span><p>Le bon tempo, c’est celui que vous gardez en vous.</p></footer>
+  </main>
+</body>
+</html>
